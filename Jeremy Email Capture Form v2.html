@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Capture Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 100px; /* Adjust this value to move content down */
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8));
+            z-index: -1;
+        }
+        .form {
+            margin-top: 30px;
+        }
+        input[type="email"] {
+            padding: 15px;
+            width: 400px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #222;
+            color: #fff;
+        }
+        button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
+        }
+        button:hover {
+            background-color: #444; /* Change background color on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+        button:active {
+            background-color: #555; /* Change background color on click */
+            transform: scale(1); /* Return to original size on click */
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>The Rêvepreneur.</h1>
+        <p>Silicon Valley-based believers dream here.</p>
+        <div class="form">
+            <form id="emailForm">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <button type="submit">stay tuned</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var typeformURL = 'https://YOUR_TYPEFORM_URL?email=' + encodeURIComponent(email);
+            window.location.href = typeformURL;
+        });
+    </script>
+</body>
+</html>
