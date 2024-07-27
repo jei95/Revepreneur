@@ -61,8 +61,20 @@
         h1 {
             font-size: 3em;
         }
-        p {
+        .typing {
             font-size: 1.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
         }
     </style>
 </head>
@@ -70,7 +82,7 @@
     <div class="background"></div>
     <div class="container">
         <h1>The Rêvepreneur.</h1>
-        <p>Silicon Valley-based believers dream here.</p>
+        <p class="typing">Silicon Valley-based believers dream here.</p>
         <div class="form">
             <form id="emailForm">
                 <input type="email" id="email" name="email" placeholder="Email" required>
@@ -88,3 +100,4 @@
     </script>
 </body>
 </html>
+
