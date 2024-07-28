@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 50vh;
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
@@ -17,6 +17,7 @@
         }
         .container {
             text-align: center;
+            margin-top: 100px; /* Adjust this value to move content down */
         }
         .background {
             position: fixed;
@@ -47,28 +48,25 @@
             color: #fff;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Transition for hover effect */
         }
         button:hover {
-            background-color: #444;
-            transform: scale(1.05);
+            background-color: #444; /* Change background color on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
         }
         button:active {
-            background-color: #555;
-            transform: scale(1);
+            background-color: #555; /* Change background color on click */
+            transform: scale(1); /* Return to original size on click */
         }
         h1 {
             font-size: 3em;
         }
-        .typing-container {
-            display: inline-block;
-            overflow: hidden;
+        .typing {
+            font-size: 1.5em;
             white-space: nowrap;
+            overflow: hidden;
             border-right: .15em solid orange;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite, loop-typing 10s infinite;
-        }
-        .typing-container p {
-            display: inline;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
         @keyframes typing {
             from { width: 0; }
@@ -78,19 +76,13 @@
             from, to { border-color: transparent; }
             50% { border-color: orange; }
         }
-        @keyframes loop-typing {
-            0%, 70%, 100% { width: 0; }
-            35%, 65% { width: 100%; }
-        }
     </style>
 </head>
 <body>
     <div class="background"></div>
     <div class="container">
         <h1>The Rêvepreneur.</h1>
-        <div class="typing-container">
-            <p>Silicon Valley-based believers dream here.</p>
-        </div>
+        <p class="typing">Silicon Valley-based believers dream here.</p>
         <div class="form">
             <form id="emailForm">
                 <input type="email" id="email" name="email" placeholder="Email" required>
@@ -102,9 +94,10 @@
         document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault();
             var email = document.getElementById('email').value;
-            var typeformURL = 'https://kmixnbf78gl.typeform.com/to/XpzRVmDk' + encodeURIComponent(email);
+            var typeformURL = 'https://YOUR_TYPEFORM_URL?email=' + encodeURIComponent(email);
             window.location.href = typeformURL;
         });
     </script>
 </body>
 </html>
+
