@@ -76,6 +76,28 @@
             from, to { border-color: transparent; }
             50% { border-color: orange; }
         }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 600px) {
+            .container {
+                margin-top: 50px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .typing {
+                font-size: 1.2em;
+            }
+            input[type="email"] {
+                width: 90%;
+                font-size: 14px;
+                padding: 10px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,4 +122,3 @@
     </script>
 </body>
 </html>
-
